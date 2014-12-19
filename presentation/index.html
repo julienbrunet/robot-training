@@ -45,7 +45,6 @@
     <div class="slides">
         <section data-transition="linear" data-background="#8c4738" data-background-transition="slide">
             <h1>Robot Framework</h1>
-
             <h2>Test Automation</h2>
         </section>
 
@@ -57,6 +56,7 @@
                 <li>Introduction</li>
                 <li>Robot Framework concepts</li>
                 <li>Development basics</li>
+                <li>Robot Framework editor : RIDE</li>
                 <li>Libraries</li>
                 <li>Extending Robot Framework</li>
             </ul>
@@ -151,34 +151,270 @@ My First Test
                 </p>
             </section>
 
-            <section>
+            <section data-transition="none" data-background-transition="none">
                 <h3>RobotFramework development basics</h3>
-                <p>Create a new test with the following content</p>
-                <pre style="box-shadow:none;">
-                    <code data-trim style="max-height:600px;box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);">
+                <div style="margin:0;padding:0;float:left;width:52%;">
+                    <pre style="box-shadow:none;margin:0;">
+                        <code  style="margin:0 -55px 0 0;max-height:600px;box-shadow:0px 0px 6px rgba(0, 0, 0, 0.3);">
 *** Settings ***
 Library    OperatingSystem
-Resource    ..\keywords\myProjectKeywords.robot
 
 *** Variables ***
 ${PATH_TO_CHECK}    c:\\temp
 
 *** Test Cases ***
 Check Host Configuration
-    [Documentation]    Check the host general config (temp folder and date)
+    [Documentation]    Check config...
     # Check existence of c:\temp folder
     Should Exists    ${PATH_TO_CHECK}
-
     Check Host Date Is    2015
 
 *** Keywords ***
 Check Host Date Is
-    [Documentation]    Check the date of the host running this test
+    [Documentation]    Check date...
     [Arguments]    ${YEAR}
     ${host_year}=    Get Time    year
     Should Be Equal    ${host_year}    ${YEAR}
-                    </code>
-                </pre>
+                        </code>
+                    </pre>
+                </div>
+                <div style="margin:0;padding:0;float:right;width:40%;">
+                    <p>Create a new test case with this Robot Framework code</p>
+                </div>
+            </section>
+
+            <section data-transition="none" data-background-transition="none">
+                <h3>RobotFramework development basics</h3>
+                <div style="margin:0;padding:0;float:left;width:52%;">
+                    <pre style="box-shadow:none;margin:0;">
+                        <code  style="margin:0 -55px 0 0;max-height:600px;box-shadow:0px 0px 6px rgba(0, 0, 0, 0.3);">
+*** Settings ***
+Library    OperatingSystem
+
+*** Variables ***
+${PATH_TO_CHECK}    c:\\temp
+
+*** Test Cases ***
+Check Host Configuration
+    [Documentation]    Check config...
+    # Check existence of c:\temp folder
+    Should Exists    ${PATH_TO_CHECK}
+    Check Host Date Is    2015
+
+*** Keywords ***
+Check Host Date Is
+    [Documentation]    Check date...
+    [Arguments]    ${YEAR}
+    ${host_year}=    Get Time    year
+    Should Be Equal    ${host_year}    ${YEAR}
+                        </code>
+                    </pre>
+                </div>
+                <div style="margin:0;padding:0 ;float:right;width:46%;font-size:0.7em;">
+                    <h3>*** test cases ***</h3>
+                    <p style="padding:0;text-align:left;">
+                        List of test cases with each test steps inside. Settings of a test cases are :
+                        <ul style="margin:0;text-align:left;list-style-type:none;">
+                            <li><span style="font-weight:bold;color:#26c6da">[Documentation]</span> Used for specifying the test documentation</li>
+                            <li><span style="font-weight:bold;color:#26c6da">[Tags]</span> Used tagging test cases</li>
+                            <li><span style="font-weight:bold;color:#26c6da">[Setup]</span>, <span style="font-weight:bold;color:#26c6da">[Teardown]</span> Specify test setup (executed before the test) and teardown (executed after the test, even if test failed)</li>
+                            <li><span style="font-weight:bold;color:#26c6da">[Template]</span> Specify the template keyword to use for each step</li>
+                            <li><span style="font-weight:bold;color:#26c6da">[Timeout]</span> Set the test case execution timeout (Test fails if timeout is reached)</li>
+                        </ul>
+                    </p>
+                </div>
+
+                <div style="position:relative; top:185px; left: 3px; width:523px; height:160px; border:3px solid red;">&nbsp;</div>
+            </section>
+
+            <section data-transition="none" data-background-transition="none">
+                <h3>RobotFramework development basics</h3>
+                <div style="margin:0;padding:0;float:left;width:52%;">
+                    <pre style="box-shadow:none;margin:0;">
+                        <code  style="margin:0 -55px 0 0;max-height:600px;box-shadow:0px 0px 6px rgba(0, 0, 0, 0.3);">
+*** Settings ***
+Library    OperatingSystem
+
+*** Variables ***
+${PATH_TO_CHECK}    c:\\temp
+
+*** Test Cases ***
+Check Host Configuration
+    [Documentation]    Check config...
+    # Check existence of c:\temp folder
+    Should Exists    ${PATH_TO_CHECK}
+    Check Host Date Is    2015
+
+*** Keywords ***
+Check Host Date Is
+    [Documentation]    Check date...
+    [Arguments]    ${YEAR}
+    ${host_year}=    Get Time    year
+    Should Be Equal    ${host_year}    ${YEAR}
+                        </code>
+                    </pre>
+                </div>
+                <div style="margin:0;padding:0 ;float:right;width:46%;font-size:0.7em;">
+                    <h3>*** keywords ***</h3>
+                    <p style="padding:0;text-align:left;">
+                        Contains keywords commons to your test suite. Keywords declared here can be used anywhere in the suite, even in setup and teardown calls. Keywords settings are:
+                    <ul style="margin:0;text-align:left;list-style-type:none;">
+                        <li><span style="font-weight:bold;color:#26c6da">[Documentation]</span> Used for specifying the keyword documentation</li>
+                        <li><span style="font-weight:bold;color:#26c6da">[Arguments]</span> Specify the keyword arguments</li>
+                        <li><span style="font-weight:bold;color:#26c6da">[Return]</span> Specify the keyword return value</li>
+                        <li><span style="font-weight:bold;color:#26c6da">[Timeout]</span> Set the keyword execution timeout (Test fails if timeout is reached)</li>
+                    </ul>
+                    </p>
+                </div>
+
+                <div style="position:relative; top:355px; left: 3px; width:523px; height:160px; border:3px solid red;">&nbsp;</div>
+            </section>
+
+            <section data-transition="none" data-background-transition="none">
+                <h3>RobotFramework development basics</h3>
+                <div style="margin:0;padding:0;float:left;width:52%;">
+                    <pre style="box-shadow:none;margin:0;">
+                        <code  style="margin:0 -55px 0 0;max-height:600px;box-shadow:0px 0px 6px rgba(0, 0, 0, 0.3);">
+*** Settings ***
+Library    OperatingSystem
+
+*** Variables ***
+${PATH_TO_CHECK}    c:\\temp
+
+*** Test Cases ***
+Check Host Configuration
+    [Documentation]    Check config...
+    # Check existence of c:\temp folder
+    Should Exists    ${PATH_TO_CHECK}
+    Check Host Date Is    2015
+
+*** Keywords ***
+Check Host Date Is
+    [Documentation]    Check date...
+    [Arguments]    ${YEAR}
+    ${host_year}=    Get Time    year
+    Should Be Equal    ${host_year}    ${YEAR}
+                        </code>
+                    </pre>
+                </div>
+                <div style="margin:0;padding:0 ;float:right;width:46%;font-size:0.7em;">
+                    <h3>*** variables ***</h3>
+                    <p style="padding:0;text-align:left;">
+                        Define variables at a "tests suite scope". Variables declared here are accessible from every test cases, keywords or settings
+                    </p>
+                </div>
+
+                <div style="position:relative; top:115px; left: 3px; width:523px; height:60px; border:3px solid red;">&nbsp;</div>
+            </section>
+
+            <section data-transition="none" data-background-transition="none">
+                <h3>RobotFramework development basics</h3>
+                <div style="margin:0;padding:0;float:left;width:52%;">
+                    <pre style="box-shadow:none;margin:0;">
+                        <code  style="margin:0 -55px 0 0;max-height:600px;box-shadow:0px 0px 6px rgba(0, 0, 0, 0.3);">
+*** Settings ***
+Library    OperatingSystem
+
+*** Variables ***
+${PATH_TO_CHECK}    c:\\temp
+
+*** Test Cases ***
+Check Host Configuration
+    [Documentation]    Check config...
+    # Check existence of c:\temp folder
+    Should Exists    ${PATH_TO_CHECK}
+    Check Host Date Is    2015
+
+*** Keywords ***
+Check Host Date Is
+    [Documentation]    Check date...
+    [Arguments]    ${YEAR}
+    ${host_year}=    Get Time    year
+    Should Be Equal    ${host_year}    ${YEAR}
+                        </code>
+                    </pre>
+                </div>
+                <div style="margin:0;padding:0 ;float:right;width:46%;font-size:0.7em;">
+                    <h3>*** settings ***</h3>
+                    <p style="padding:0;text-align:left;">
+                        <ul style="margin:0 0 0 -80px;text-align:left;list-style-type:none;">
+                            <li><span style="font-weight:bold;color:#26c6da">Import libraries</span><br><pre><code class="markdown" data-trim style="font-size:1.2em;margin-right:-55px;">Library    libraryName    arg1    arg2...</code></pre></li>
+                            <li><span style="font-weight:bold;color:#26c6da">Import External Keyword resources</span><br><pre><code class="markdown" data-trim style="font-size:1.2em;margin-right:-55px;">Resource    ../../keywords/myKWords.robot</code></pre></li>
+                            <li><span style="font-weight:bold;color:#26c6da">Setup and Teardown</span><br>
+                                <pre><code class="markdown" data-trim style="font-size:1.2em;margin-right:-55px;">
+Suite Setup    My Suite Setup Keyword
+Suite Teardown    My Suite Setup Keyword
+Test Setup    My Test Setup Keyword
+Test Teardown    My Test Setup Keyword
+                                </code></pre>
+                            </li>
+                            <li><span style="font-weight:bold;color:#26c6da">Tags</span><br>
+                                <pre><code class="markdown" data-trim style="font-size:1.2em;margin-right:-55px;">
+Force Tags    TAG1    TAG2
+Default tags    TAG
+                                </code></pre>
+                            </li>
+
+                        </ul>
+                    </p>
+                </div>
+
+                <div style="position:relative; top:45px; left: 3px; width:523px; height:60px; border:3px solid red;">&nbsp;</div>
+            </section>
+
+            <section>
+                <h3>RobotFramework development basics</h3>
+                <p>Resource file example</p>
+                <div style="margin:0;padding:0;float:left;width:100%;">
+                    <pre style="box-shadow:none;margin:0;">
+                        <code  style="margin:0 -55px 0 0;max-height:600px;box-shadow:0px 0px 6px rgba(0, 0, 0, 0.3);">
+*** Settings ***
+Library    OperatingSystem
+
+*** Variables ***
+${EXPECTED_YEAR}    2015
+
+*** Keywords ***
+Check Host Date Is
+    [Documentation]    Check date...
+    ${host_year}=    Get Time    year
+    Should Be Equal    ${host_year}    ${EXPECTED_YEAR}
+                        </code>
+                    </pre>
+                </div>
+                <p>No <span style="font-style: italic;">*** Test Cases ***</span> section in resource files !</p>
+            </section>
+
+            <section>
+                <h3>RobotFramework development basics</h3>
+                <p>Initialization files <span style="font-style: italic;">__init__.ext</span></p>
+                <div style="margin:0;padding:0;float:left;width:40%;">
+                    <pre style="box-shadow:none;margin:0;">
+                        <code data-trim style="margin:0 -55px 0 0;max-height:600px;box-shadow:0px 0px 6px rgba(0, 0, 0, 0.3);">
+*** Settings ***
+Suite setup    Do Something
+Library        SeleniumLibrary
+Resource       ../keywords/myKw.robot
+
+*** Variables ***
+${MY_VAR}    foo
+
+*** Keywords ***
+Do Something
+    Log    ${MY_VAR}
+                        </code>
+                    </pre>
+                </div>
+                <div style="margin:0;padding:0;float:right;width:53%;">
+                <p>
+                    <ul style="margin:0;text-align:left;font-size:0.9em;">
+                        <li>This file is executed before each other test suites of the current folder</li>
+                        <li>Resource imported in this file are also available for all the test suites in the same folder</li>
+                        <li>Libraries, Variables, Keywords are <span style="font-weight:bold; color:red;">NOT</span> available for suites in the same folder</li>
+                    </ul>
+
+                </p>
+                </div>
             </section>
 
         </section>
@@ -211,8 +447,8 @@ Check Host Date Is
                 // The "normal" size of the presentation, aspect ratio will be preserved
                 // when the presentation is scaled to fit different resolutions. Can be
                 // specified using percentage units.
-                width: 1024,
-                height: 768,
+                width: 1200, //(Mini 1024 pour pres robotFmk)
+                height: 760, //(Mini 760 pour pres robotFmk)
 
                 // Factor of the display size that should remain empty around the content
                 margin: 0.1,
