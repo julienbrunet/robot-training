@@ -56,8 +56,8 @@
             <ul>
                 <li>Introduction</li>
                 <li>Robot Framework concepts</li>
-                <li>Test development basics</li>
-                <li>Test development with libraries</li>
+                <li>Development basics</li>
+                <li>Libraries</li>
                 <li>Extending Robot Framework</li>
             </ul>
             </p>
@@ -68,7 +68,6 @@
             </aside>
         </section>
 
-        <!-- Example of nested vertical slides -->
         <section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
             <section>
                 <h2>Introduction</h2>
@@ -125,11 +124,64 @@
                 <img class="fragment" src="img/kw-example-2.png" width="330" style="background:none;border:none;box-shadow:none;margin:0;padding:0;"/>
                 <img class="fragment" src="img/kw-example-3.png" width="330" style="background:none;border:none;box-shadow:none;margin:115px -15px;padding:0;"/>
             </section>
-
-
         </section>
 
+        <section data-transition="linear" data-background="#795548" data-background-transition="slide">
+            <section>
+                <h2>Robot Framework development basics</h2>
+            </section>
+            <section>
+                <h3>Robot Framework development basics : a 1st script</h3>
+                <p>Write the following code in a text file named <code>myFirstTest.robot</code> under "scripts" folder</p>
+                <pre style="box-shadow:none;">
+                    <code contenteditable style="box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);">
+*** Test Cases ***
+My First Test
+    ${current_year}=    Get Time    year
+    Should Start With    ${current_year}    20
+                    </code>
+                </pre>
+                <p>
+                    <div style="float:left;width:50%;" class="fragment" >
+                        Then launch the test by running <code>robot.bat</code> file. You should get a success in the report.html file :<br>
+                    </div>
+                    <div style="float:right;width:45%;" class="fragment" >
+                        <img src="img/report-myFirstTest.png" width="100%;" style="background:none;border:none;box-shadow:none;margin:0;padding:0;"/>
+                    </div>
+                </p>
+            </section>
 
+            <section>
+                <h3>RobotFramework development basics</h3>
+                <p>Create a new test with the following content</p>
+                <pre style="box-shadow:none;">
+                    <code data-trim style="max-height:600px;box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3);">
+*** Settings ***
+Library    OperatingSystem
+Resource    ..\keywords\myProjectKeywords.robot
+
+*** Variables ***
+${PATH_TO_CHECK}    c:\\temp
+
+*** Test Cases ***
+Check Host Configuration
+    [Documentation]    Check the host general config (temp folder and date)
+    # Check existence of c:\temp folder
+    Should Exists    ${PATH_TO_CHECK}
+
+    Check Host Date Is    2015
+
+*** Keywords ***
+Check Host Date Is
+    [Documentation]    Check the date of the host running this test
+    [Arguments]    ${YEAR}
+    ${host_year}=    Get Time    year
+    Should Be Equal    ${host_year}    ${YEAR}
+                    </code>
+                </pre>
+            </section>
+
+        </section>
 
 
     </div>
@@ -155,6 +207,19 @@
 				// Parallax scrolling
 				// parallaxBackgroundImage: 'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg',
 				// parallaxBackgroundSize: '2100px 900px',
+
+                // The "normal" size of the presentation, aspect ratio will be preserved
+                // when the presentation is scaled to fit different resolutions. Can be
+                // specified using percentage units.
+                width: 1024,
+                height: 768,
+
+                // Factor of the display size that should remain empty around the content
+                margin: 0.1,
+
+                // Bounds for smallest/largest possible scale to apply to content
+                minScale: 0.2,
+                maxScale: 1.0,
 
 				// Optional libraries used to extend on reveal.js
 				dependencies: [
