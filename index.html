@@ -180,7 +180,7 @@
             </aside>
         </section>
 
-        <section data-transition="linear" data-background="#4d7e65" data-background-transition="slide">
+        <section data-transition="linear" data-background="#F2E9CE" data-background-transition="slide">
             <section>
                 <h2>Introduction</h2>
             </section>
@@ -189,28 +189,54 @@
                 <h3>Technologies</h3>
                 <p>RobotFramework is a test automation framework designed for Acceptance Testing (ATDD)</p>
                 <p>
-                <ul>
-                    <li>Core is written in Python</li>
-                    <li>Fully compatible with Java (through Jython)</li>
-                </ul>
+                    <ul>
+                        <li>Core is written in Python</li>
+                        <li>Fully compatible with Java (through Jython)</li>
+                    </ul>
+                </p>
+                <p style="width:600px;">
+                    <div style="float:left;
+                                width:140px;
+                                height:140px;
+                                border-radius:70px;
+                                background:url(img/Java.png) no-repeat center white;
+                                background-size:45%;
+                                margin:0 0 0 300px;
+                                box-shadow: 10px 10px 25px -10px rgba(0,0,0,1);">
+                    </div>
+                    <div style="width:140px;
+                                height:140px;
+                                border-radius:70px;
+                                background:url(img/python.png) no-repeat center white;
+                                background-size:140%;
+                                margin:0 570px;
+                                box-shadow: 10px 10px 25px -10px rgba(0,0,0,1);">
+                    </div>
                 </p>
 
             </section>
             <section>
                 <h3>History</h3>
-
-                <p>
-                <ul>
-                    <li>Initiated in 2005 by Nokia Siemens Network</li>
-                    <li>Open Sourced in 2008 (release 2)</li>
-                    <li>Last version <a href="https://pypi.python.org/pypi/robotframework#downloads">2.8.6</a> (July 2014)</li>
-                </ul>
-                </p>
-                <p><a href="http://www.robotframework.org">http://www.robotframework.org</a></p>
+                <div style="float:left;">
+                    <img src="img/evolution.jpg" width="350"
+                         style="float:left;border-color:white;"
+                    />
+                </div>
+                <div style="margin:30px 0 0 370px">
+                    <ul>
+                        <li>Initiated in 2005 by Nokia Siemens Network</li>
+                        <li>Open Sourced in 2008 (release 2)</li>
+                        <li>Big community on the <a href="https://github.com/robotframework">GitHub</a> project</li>
+                        <li>Last version <a href="https://pypi.python.org/pypi/robotframework#downloads">2.9.1</a> (August 2015)</li>
+                    </ul>
+                    <p>
+                        <a href="http://www.robotframework.org">http://www.robotframework.org</a>
+                    </p>
+                </div>
             </section>
         </section>
 
-        <section data-transition="linear" data-background="#444444" data-background-transition="slide">
+        <section data-transition="linear" data-background="#BA5158" data-background-transition="slide">
             <section>
                 <h2>RobotFramework concepts</h2>
                 <h3>Acceptance Testing / Keyword Driven</h3>
@@ -238,9 +264,68 @@
             </section>
         </section>
 
-        <section data-transition="linear" data-background="#795548" data-background-transition="slide">
+        <section data-transition="linear" data-background="#E1EBF5" data-background-transition="slide">
             <section>
                 <h2>Robot Framework development basics</h2>
+            </section>
+            <section>
+                <h3>Install RobotFramework package</h3>
+                <p>
+                    Download the standalone Robotframerwork package from <a href="https://github.com/julienbrunet/robot-standalone-kit">Github</a> and unzip it on your computer :<br />
+                    <a href="https://github.com/julienbrunet/robot-standalone-kit/archive/master.zip">
+                        <img src ="img/download.png" width="100" style="border:none;">
+                    </a>
+                </p>
+                <p style="color:red;">The only prerequisite to run this RobotFramework package is java 1.6 min.</p>
+
+            </section>
+            <section>
+                <h3>Content of the RobotFramework package</h3>
+                <p>
+                    This package contains the following folder tree :
+                    <table style="width:100%;font-size:0.6em;">
+                        <tr>
+                            <td>robotframework-core</td>
+                            <td></td>
+                            <td>All necessary binaries to run RobotFramework tests</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>documentation</td>
+                            <td>Documentation on existing libraries and keywords</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>lib</td>
+                            <td>External robotFramework library binaries</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>standalone-browsers</td>
+                            <td>Binaries for standalone browsers</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>web-drivers</td>
+                            <td>Web drivers executable</td>
+                        </tr>
+                        <tr>
+                            <td>tests</td>
+                            <td></td>
+                            <td>Where we write all the tests</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>scripts</td>
+                            <td>The entry point of tests</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>keywords</td>
+                            <td>The keyword file definition</td>
+                        </tr>
+                    </table>
+                </p>
             </section>
             <section>
                 <h3>A first script</h3>
@@ -336,7 +421,7 @@ Check Host Date Is
                     </p>
                 </div>
 
-                <div style="position:relative; top:185px; left: 3px; width:523px; height:160px; border:3px solid red;">&nbsp;</div>
+                <div style="position:relative; top:195px; left: 3px; width:523px; height:160px; border:3px solid red;">&nbsp;</div>
             </section>
 
             <section data-transition="none" data-background-transition="none">
@@ -379,7 +464,7 @@ Check Host Date Is
                     </p>
                 </div>
 
-                <div style="position:relative; top:355px; left: 3px; width:523px; height:160px; border:3px solid red;">&nbsp;</div>
+                <div style="position:relative; top:375px; left: 3px; width:523px; height:160px; border:3px solid red;">&nbsp;</div>
             </section>
 
             <section data-transition="none" data-background-transition="none">
@@ -416,7 +501,7 @@ Check Host Date Is
                     </p>
                 </div>
 
-                <div style="position:relative; top:115px; left: 3px; width:523px; height:60px; border:3px solid red;">&nbsp;</div>
+                <div style="position:relative; top:120px; left: 3px; width:523px; height:60px; border:3px solid red;">&nbsp;</div>
             </section>
 
             <section data-transition="none" data-background-transition="none">
