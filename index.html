@@ -631,6 +631,95 @@ Do Something
 
         </section>
 
+        <section data-transition="linear" data-background="#262626" data-background-transition="slide">
+            <section>
+                <h2>RobotFramework libraries</h2>
+            </section>
+            <section>
+
+                <table>
+                    <tr>
+                        <th><font color="#fa0">Official Libraries</font></th>
+                        <th><font color="#fa0">External Libraries</font></th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table style="font-size:0.8em;">
+                                <tr><td>Built In</td><td>All RobotFramework basic keywords</td></tr>
+                                <tr><td>Operating System</td><td>Enables various O.S. related tasks (Files, Run commands…)</td></tr>
+                                <tr><td>Collections</td><td>Keywords for handling lists and dictionaries</td></tr>
+                                <tr><td>Strings</td><td>String manipulation and verification</td></tr>
+                                <tr><td>...</td><td>etc</td></tr>
+                            </table>
+                        </td>
+                        <td>
+                            <table style="font-size:0.8em;">
+                                <tr><td>Selenium</td><td>For web application testing</td></tr>
+                                <tr><td>SSHLibrary</td><td>Connect and run commands on SSH remote server</td></tr>
+                                <tr><td>DbLibrary</td><td>Common fonctionnality for testing database content</td></tr>
+                                <tr><td>...</td><td>etc</td></tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                </table>
+
+            </section>
+
+            <section>
+                <div style="font-size:1.4em;"><font color="#fa0">Exercise 1</font>&nbsp;&nbsp;&nbsp;Automation with database library</div>
+
+                    <div class="fragment" style="width:90%">
+                        <span style="text-align:right;float:left;width:78%;margin-top:50px">Write a keyword that connect to the database and run an init sql script</span>
+                        <img src="img/database.png" style="float:right;background:transparent; box-shadow:none; border:none;width:20%;"/>
+                    </div>
+                    <div class="fragment" style="margin-top:20px;">
+                        <div style="text-align:left;font-size:1em">
+                            <ul>
+                                <li>Launch the H2 database exercises\tools\h2\start_server.bat</li>
+                                <li>
+                                    In a RobotFramework test case
+                                    <ul>
+                                        <li>Import the library named <code>org.robot.database.keywords.DatabaseLibrary</code></li>
+                                        <li>Connect to the h2 database with the good driver</li>
+                                        <li>Run the file init_data.sql</li>
+                                        <li>Verify the number of row in table "TEST_TABLE" is 3</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <strong>Use the <a href="#">documentation</a> !!!</strong>
+                    </div>
+            </section>
+
+            <section>
+                <div style="font-size:1.4em;"><font color="#fa0">Selenium</font>&nbsp;&nbsp;&nbsp;A web app test automation framework</div>
+
+                <div class="fragment" style="width:90%">
+                    <span style="text-align:right;float:left;width:78%;margin-top:50px">Write a keyword that connect to the database and run an init sql script</span>
+                    <img src="img/database.png" style="float:right;background:transparent; box-shadow:none; border:none;width:20%;"/>
+                </div>
+                <div class="fragment" style="margin-top:20px;">
+                    <div style="text-align:left;font-size:1em">
+                        <ul>
+                            <li>Launch the H2 database exercises\tools\h2\start_server.bat</li>
+                            <li>
+                                In a RobotFramework test case
+                                <ul>
+                                    <li>Import the library named <code>org.robot.database.keywords.DatabaseLibrary</code></li>
+                                    <li>Connect to the h2 database with the good driver</li>
+                                    <li>Run the file init_data.sql</li>
+                                    <li>Verify the number of row in table "TEST_TABLE" is 3</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <strong>Use the <a href="#">documentation</a> !!!</strong>
+                </div>
+            </section>
+
+        </section>
+
 
     </div>
 
