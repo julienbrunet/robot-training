@@ -696,33 +696,67 @@ Do Something
                 <div style="font-size:1.4em;"><font color="#fa0">Selenium</font>&nbsp;&nbsp;&nbsp;A web app test automation framework</div>
 
                 <div class="fragment" style="width:90%">
-                    <span style="text-align:right;float:left;width:78%;margin-top:50px">Write a keyword that connect to the database and run an init sql script</span>
-                    <img src="img/database.png" style="float:right;background:transparent; box-shadow:none; border:none;width:20%;"/>
+                    <span style="text-align:right;float:left;width:78%;margin-top:50px">Write a test case that connect to Wikipedia and search for RobotFramework page</span>
+                    <img src="img/browser.png" style="float:right;background:transparent; box-shadow:none; border:none;width:20%;"/>
                 </div>
                 <div class="fragment" style="margin-top:20px;">
                     <div style="text-align:left;font-size:1em">
                         <ul>
-                            <li>Launch the H2 database exercises\tools\h2\start_server.bat</li>
-                            <li>
-                                In a RobotFramework test case
-                                <ul>
-                                    <li>Import the library named <code>org.robot.database.keywords.DatabaseLibrary</code></li>
-                                    <li>Connect to the h2 database with the good driver</li>
-                                    <li>Run the file init_data.sql</li>
-                                    <li>Verify the number of row in table "TEST_TABLE" is 3</li>
-                                </ul>
-                            </li>
+                            <li>Import the library named <code>Selenium2Library</code></li>
+                            <li>Open a firefox browser to http://en.wikipedia.org/</li>
+                            <li>In the search bar write "Robot Framework" and click on search button</li>
+                            <li>Verify the displayed page contains the text "<i>Robot Framework is a generic test automation framework</i>"</li>
                         </ul>
                     </div>
                     <strong>Use the <a href="#">documentation</a> !!!</strong>
                 </div>
             </section>
 
+            <section data-transition="none">
+                <div style="font-size:1.4em;"><font color="#fa0">Selenium</font>&nbsp;&nbsp;&nbsp;Locating elements</div>
+
+                <div class="fragment" style="width:100%;margin-top:37px;">
+                    <span>
+                        All keywords in Selenium2Library that need to find an element on the page take a <strong style="font-size:1.1em;color:#fa0">locator</strong> argument.
+                        <span >A locator is an attribute of the html tag we want to work with.</span>
+                        <br><br><br><br><br><br>
+                    </span>
+                </div>
+            </section>
+
+            <section data-transition="none">
+                <div style="font-size:1.4em;"><font color="#fa0">Selenium</font>&nbsp;&nbsp;&nbsp;Locating elements</div>
+
+                <div style="width:100%;margin-top:50px;">
+
+                    <div style="float:left;width:55%">
+                        For example if we want to locate this element in a web page<br>
+                    </div>
+                    <pre><code style="margin-top:30px;font-size:1.17em;float:right;width:40%;">&lt;input id=&quot;searchInput&quot;&gt;</code></pre>
+                    <div style="clear:both;padding:35px 0 25px 0;">Then the locator is <code ><font color="#fa0">id=searchInput</font></code><br></div>
+                    <span class="fragment">
+                        <span style="float:left;width:37%;font-size:1em;margin-top:25px;">So in Robot Framework code we can write</span>
+                        <pre style="margin:0;padding:0;float:right;width:62%;box-shadow:none;">
+                            <code style="font-size:1.1em;margin:0;">Wikipedia Search
+    Open Browser   http://en.wikipedia.org
+    Input text    id=searchInput    Robot Framework</code>
+                        </pre>
+                        <div style="position:relative; top:78px; left: 635px; width:205px; height:25px; border:3px solid red;">&nbsp;</div>
+                    </span>
+                </div>
+
+            </section>
+
+            <section data-transition="none">
+                <div style="font-size:1.4em;"><font color="#fa0">Selenium</font>&nbsp;&nbsp;&nbsp;Locating elements with XPath</div>
+
+
+                <div style="margin-top:40px;"><font color="#fa0">XPath</font> (XML Path language) is a query language  for selecting node in an XML document.</div>
+
+            </section>
+
         </section>
-
-
     </div>
-
 </div>
 
 <script src="reveal.js-3.1.0/lib/js/head.min.js"></script>
