@@ -767,7 +767,6 @@ Do Something
             <section data-transition="none">
                 <div style="font-size:1.4em;"><font color="#fa0">Selenium</font>&nbsp;&nbsp;&nbsp;Locating elements with XPath</div>
 
-
                 <div style="margin-top:40px;">
                     <pre style="margin:0;padding:0;float:left;width:55%;box-shadow:none;">
                         <code style="font-size:1.1em;margin:0;">
@@ -794,13 +793,58 @@ Do Something
                         <pre class="fragment" style="border-left:4px solid orange;"><code>//*[text()='Hello World']</code></pre>
                         <pre class="fragment" style="border-left:4px solid orange;"><code>//*[contains(text(),'Hello']</code></pre>
                     </div>
+                </div>
+
+            </section>
+
+            <section data-transition="none">
+                <div style="font-size:1.4em;"><font color="#fa0">Exercice 3 : </font>&nbsp;&nbsp;&nbsp;Try it yourlself !</div>
+                Open the file <a href="exercices/ex3/example.html">example.html</a> with firefox and tests the previous XPath with Firepath extension
+
+                <img src="img/ex3_screenshot.png">
+            </section>
+
+            <section data-transition="none">
+                <div style="font-size:1.4em;"><font color="#fa0">Exercice 4 : </font>&nbsp;&nbsp;&nbsp;Locate element with XPath</div>
+                <div style="font-size:0.9em;text-align:left;">
+                    Open the file <a href="exercices/ex4/ex4.html">ex4.html</a> with firefox and locate the following element with XPath :
+                    <br>
+                    <ul>
+                        <li style="line-height:70px;">The input field 1 by using its id <img style="margin:0;" src="img/ex4/field1.png"></li>
+                        <li style="line-height:70px;">The label "field 3" by using its content text <img style="margin:0;" src="img/ex4/field3-label.png"></li>
+                        <li style="line-height:70px;">The input field 3 by using its label on the side <img style="margin:0;" src="img/ex4/field3-input.png"></li>
+                        <li style="line-height:70px;">The email "jhunter5@gnu.org" (using text)<img style="margin:0;" src="img/ex4/email.png"></li>
+                        <li style="line-height:70px;">The IP Address of "Juan King" by using its email text<img style="margin:0;" src="img/ex4/ip.png"></li>
+                    </ul>
 
                 </div>
 
             </section>
 
+            <section data-transition="none">
+                <div style="font-size:1.4em;"><font color="#fa0">Exercice 5 : </font>&nbsp;&nbsp;&nbsp;XPath in RobotFramework script</div>
 
+                <div class="fragment" style="width:90%">
+                    <span style="text-align:right;float:left;width:78%;margin-top:50px">Write a test case that open to Wikipedia page of New York city, and write keyword returning the population for a given decade</span>
+                    <img src="img/wikipedia.png" style="float:right;background:transparent; box-shadow:none; border:none;width:20%;"/>
+                </div>
+                <div class="fragment" style="margin-top:20px;">
+                    <div style="text-align:left;font-size:0.9em">
+                        The final test case should look like :
+                        <pre style="margin:0;padding:0;float:left;width:100%;box-shadow:none;">
+                            <code style="font-size:1.1em;margin:0;">
+Check NY Population
+    Open Browser    https://en.wikipedia.org/wiki/New_York
+    ${population1910}=    Get NY Population    1910
+    Should Be Equals    ${population1910}    9,113,614
+                            </code>
+                        </pre>
 
+                        <br>
+                        You must write the keyword Get NY Population !
+                    </div>
+                </div>
+            </section>
         </section>
     </div>
 </div>
