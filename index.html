@@ -846,6 +846,51 @@ Check NY Population
                 </div>
             </section>
         </section>
+
+        <section data-transition="linear" data-background="#EDEDED" data-background-transition="slide">
+            <section>
+                <h2>Extend RobotFramework</h2>
+            </section>
+
+            <section>
+                <div style="font-size:1.4em;">Extend RbF with <font color="#F9B248">Java</font></div>
+
+
+                <div class="fragment" style="width:100%">
+                    Your projet will need the <a href="https://github.com/robotframework/JavalibCore">RobotFramework Java Lib Core</a>
+                    <pre  style="margin:0;padding:0;float:left;width:100%;box-shadow:none;">
+                        <code style="font-size:1.1em;margin:0;">
+@RobotKeywords
+public class FTPLibrary {
+
+    public FTPLibrary(){}
+
+    @RobotKeyword(
+        "Put a file via ftp\n" +
+        "Example :\n" +
+        "| Ftp Put | 192.168.1.1 | user | passwd | C:\\myFile.txt | /home/user/dir |")
+    @ArgumentNames({"host","user","passwd","filePath","targetDirectory"})
+    public void ftpPut(String host, String user, String passwd, String filePath, String targetDirectory)
+       // Your Java code
+    }
+}                        </code>
+                    </pre>
+                    For more information, check the Java lib core <a href="https://github.com/robotframework/JavalibCore/wiki">documentation</a>
+                </div>
+            </section>
+
+        </section>
+        <section data-transition="linear" data-background="#FFF" data-background-transition="slide">
+            <section>
+                <h2>Conclusion</h2>
+            </section>
+
+            <section>
+                <div style="font-size:1.5em;">Any question <font color="#F9B248">?</font></div>
+            </section>
+
+        </section>
+
     </div>
 </div>
 
